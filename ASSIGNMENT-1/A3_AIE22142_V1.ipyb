@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Load the data from Excel
+data = pd.read_excel("C:\\Users\\SACHIN.R\\Downloads\\Lab Session1 Data.xlsx")
+
+# Assuming 'Purchase Data' sheet has columns A, B, C, etc., and you want to segregate into matrices A and C
+# You may need to adjust column indices according to your actual data
+A = data.iloc[:, :3]  # Assuming the first three columns belong to matrix A
+C = data.iloc[:, 3:]  # Assuming the remaining columns belong to matrix C
+print(A)
+print(C)
+# Print the dimensions of matrices A and C
+print("Dimensionality of matrix A:", A.shape)
+print("Dimensionality of matrix C:", C.shape)
+
+# Dimensionality of the vector space is the number of columns in matrix A or rows in matrix C
+vector_space_dimension = A.shape[1]  # Or C.shape[0]
+print("Dimensionality of the vector space:", vector_space_dimension)
